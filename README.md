@@ -2,22 +2,27 @@
 
 A Chrome extension (Manifest V3) that restores the classic Twitter look on x.com — bird logo, "Twitter" name, classic blue — purely cosmetic and client-side.
 
-**Status:** planning. No code yet.
+**Status:** first working version. Load it unpacked and test on x.com.
 
 - Project brief: [docs/BRIEF.md](docs/BRIEF.md)
 - Working notes for Claude Code: [CLAUDE.md](CLAUDE.md)
 
-## Planned layout
+## Layout
 
 ```
 manifest.json      MV3 manifest, content script on x.com
 src/content.js     MutationObserver + logo/text/title swaps
 src/styles.css     color and font overrides
 popup/             on/off toggle and per-feature settings
-assets/            logo + favicon (bring your own, see below)
-icons/             toolbar icons
+assets/            bird logo (header and favicon)
+test/              Playwright smoke test against a local fixture
 ```
 
-## Logo asset
+## Install
 
-The classic bird is a trademarked logo, so this repo won't ship a copy. Add your own file at `assets/logo.svg` (and `assets/favicon.png`) for personal use.
+1. Open `chrome://extensions`, turn on Developer mode, click **Load unpacked** and pick this folder.
+2. Use the toolbar popup to turn the whole thing, or each feature, on and off. Changes apply instantly.
+
+## Test
+
+`npm install && npm test` loads the extension in Chromium, serves `test/fixture/home.html` in place of x.com, and checks the swaps, that page click handlers still fire, and that turning it off reverts everything.
