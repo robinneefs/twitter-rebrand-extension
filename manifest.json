@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Twitter Rebrand",
+  "name": "Twitter Classic",
   "version": "0.1.0",
   "description": "Restores classic Twitter branding on x.com. Cosmetic only.",
   "icons": {
@@ -14,7 +14,7 @@
   ],
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "Twitter Rebrand",
+    "default_title": "Twitter Classic",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",

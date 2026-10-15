@@ -1,4 +1,4 @@
-# Twitter Rebrand
+# Twitter Classic
 
 A Chrome extension (Manifest V3) that restores the classic Twitter look on x.com — bird logo, "Twitter" name, classic blue — purely cosmetic and client-side.
 
