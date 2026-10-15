@@ -15,6 +15,7 @@ src/content.js     MutationObserver + logo/text/title swaps
 src/styles.css     color and font overrides
 popup/             on/off toggle and per-feature settings
 assets/            bird logo (header and favicon)
+icons/             toolbar icons (from the bird logo)
 test/              Playwright smoke test against a local fixture
 ```
 

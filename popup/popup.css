@@ -1,7 +1,52 @@
-body { width: 230px; margin: 0; padding: 12px 14px; font: 13px "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif; color: #14171a; }
-h1 { margin: 0 0 10px; font-size: 15px; color: #1da1f2; }
-label { display: flex; gap: 8px; align-items: center; padding: 4px 0; cursor: pointer; }
-label.main { font-weight: bold; }
-fieldset { border: 0; margin: 4px 0 0; padding: 0 0 0 10px; }
-fieldset:disabled { opacity: 0.5; }
-input { accent-color: #1da1f2; }
+:root {
+  --blue: #1da1f2;
+  --bg: #ffffff;
+  --card: #f5f8fa;
+  --text: #14171a;
+  --muted: #657786;
+  --line: #e1e8ed;
+  --off: #ccd6dd;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #15202b; --card: #192734; --text: #ffffff; --muted: #8899a6; --line: #38444d; --off: #38444d; }
+}
+
+* { box-sizing: border-box; }
+body {
+  width: 280px; margin: 0; padding: 14px;
+  background: var(--bg); color: var(--text);
+  font: 13px/1.35 "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+h1 { margin: 0; font-size: 16px; font-weight: 800; }
+header p { margin: 0; color: var(--muted); font-size: 12px; }
+
+.row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 12px; cursor: pointer;
+}
+.text { display: flex; flex-direction: column; }
+.text small { color: var(--muted); font-size: 12px; }
+
+.main { background: var(--card); border-radius: 14px; margin-bottom: 10px; }
+#features { background: var(--card); border-radius: 14px; transition: opacity .2s; }
+#features .row + .row { border-top: 1px solid var(--line); }
+#features.disabled { opacity: .45; pointer-events: none; }
+
+/* Toggle switch: the real checkbox sits invisibly on top for clicks and keyboard. */
+.switch { position: relative; flex: none; width: 38px; height: 22px; }
+.switch input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; z-index: 1; }
+.switch span {
+  position: absolute; inset: 0; border-radius: 999px; background: var(--off); transition: background .2s;
+}
+.switch span::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px;
+  border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.25); transition: transform .2s;
+}
+.switch input:checked + span { background: var(--blue); }
+.switch input:checked + span::after { transform: translateX(16px); }
+.switch input:focus-visible + span { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+footer { margin-top: 12px; text-align: center; color: var(--muted); font-size: 11px; }

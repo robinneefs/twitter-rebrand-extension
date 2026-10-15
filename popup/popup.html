@@ -5,14 +5,39 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h1>Twitter Rebrand</h1>
-  <label class="main"><input type="checkbox" data-key="enabled"> Enabled</label>
-  <fieldset id="features">
-    <label><input type="checkbox" data-key="logo"> Bird logo and favicon</label>
-    <label><input type="checkbox" data-key="text"> "Twitter" and "Tweet" wording</label>
-    <label><input type="checkbox" data-key="colors"> Classic blue</label>
-    <label><input type="checkbox" data-key="font"> Classic font</label>
-  </fieldset>
+  <header>
+    <img src="../icons/icon48.png" alt="" width="28" height="28">
+    <div>
+      <h1>Twitter Rebrand</h1>
+      <p>Classic Twitter on x.com</p>
+    </div>
+  </header>
+
+  <label class="row main">
+    <span class="text"><strong>Enabled</strong><small>Turn every change on or off</small></span>
+    <span class="switch"><input type="checkbox" data-key="enabled"><span></span></span>
+  </label>
+
+  <section id="features">
+    <label class="row">
+      <span class="text"><strong>Bird logo</strong><small>Header logo and tab icon</small></span>
+      <span class="switch"><input type="checkbox" data-key="logo"><span></span></span>
+    </label>
+    <label class="row">
+      <span class="text"><strong>Classic wording</strong><small>Twitter, Tweet, Retweet</small></span>
+      <span class="switch"><input type="checkbox" data-key="text"><span></span></span>
+    </label>
+    <label class="row">
+      <span class="text"><strong>Classic blue</strong><small>#1DA1F2 in every theme</small></span>
+      <span class="switch"><input type="checkbox" data-key="colors"><span></span></span>
+    </label>
+    <label class="row">
+      <span class="text"><strong>Classic font</strong><small>Helvetica Neue / Segoe UI</small></span>
+      <span class="switch"><input type="checkbox" data-key="font"><span></span></span>
+    </label>
+  </section>
+
+  <footer>Changes apply instantly</footer>
   <script src="popup.js"></script>
 </body>
 </html>

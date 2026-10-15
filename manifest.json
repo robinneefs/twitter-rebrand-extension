@@ -3,17 +3,48 @@
   "name": "Twitter Rebrand",
   "version": "0.1.0",
   "description": "Restores classic Twitter branding on x.com. Cosmetic only.",
-  "permissions": ["storage"],
-  "action": { "default_popup": "popup/popup.html", "default_title": "Twitter Rebrand" },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Twitter Rebrand",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
   "content_scripts": [
     {
-      "matches": ["https://x.com/*", "https://*.x.com/*"],
-      "js": ["src/content.js"],
-      "css": ["src/styles.css"],
+      "matches": [
+        "https://x.com/*",
+        "https://*.x.com/*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "css": [
+        "src/styles.css"
+      ],
       "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
-    { "resources": ["assets/logo.svg"], "matches": ["https://x.com/*", "https://*.x.com/*"] }
+    {
+      "resources": [
+        "assets/logo.svg"
+      ],
+      "matches": [
+        "https://x.com/*",
+        "https://*.x.com/*"
+      ]
+    }
   ]
 }
