@@ -13,7 +13,7 @@ A Manifest V3 Chrome extension that restores classic Twitter branding on x.com: 
 - Never rewrite user content: tweet text, names, bios, the composer, inputs. Only rewrite an allowlist of UI labels, by exact match.
 - Every change must be reversible when the user toggles a feature off, without a reload.
 - No background script, no network requests, no remote code. Permissions: `storage` only, plus the x.com content-script match.
-- Don't commit a copy of the trademarked bird logo; `assets/logo.svg` is user-supplied.
+- The bird logo at `assets/logo.svg` was supplied by the repo owner, who chose to commit it (2026-10-15).
 
 ## Approach
 
