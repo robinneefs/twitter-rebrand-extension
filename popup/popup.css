@@ -1,0 +1,7 @@
+body { width: 230px; margin: 0; padding: 12px 14px; font: 13px "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif; color: #14171a; }
+h1 { margin: 0 0 10px; font-size: 15px; color: #1da1f2; }
+label { display: flex; gap: 8px; align-items: center; padding: 4px 0; cursor: pointer; }
+label.main { font-weight: bold; }
+fieldset { border: 0; margin: 4px 0 0; padding: 0 0 0 10px; }
+fieldset:disabled { opacity: 0.5; }
+input { accent-color: #1da1f2; }

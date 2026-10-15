@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter Rebrand",
+  "version": "0.1.0",
+  "description": "Restores classic Twitter branding on x.com. Cosmetic only.",
+  "permissions": ["storage"],
+  "action": { "default_popup": "popup/popup.html", "default_title": "Twitter Rebrand" },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://*.x.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/styles.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["assets/logo.svg"], "matches": ["https://x.com/*", "https://*.x.com/*"] }
+  ]
+}

@@ -1,0 +1,5 @@
+# User-supplied trademarked logo, never committed
+assets/logo.svg
+assets/favicon.png
+node_modules/
+test-results/

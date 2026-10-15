@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Home / X</title>
+  <link rel="shortcut icon" href="//abs.twimg.com/favicons/twitter.3.ico">
+</head>
+<body>
+  <!-- Minimal stand-in for x.com markup the extension targets. -->
+  <header>
+    <h1 role="heading"><a href="/home" aria-label="X"><svg id="logo" viewBox="0 0 24 24" width="30" height="30"><g><path d="M2 2h20v20H2z"></path></g></svg></a></h1>
+    <a href="/notifications" id="notif-link"><span>Notifications</span></a>
+    <a data-testid="SideNav_NewTweet_Button" href="/compose/post" id="side-post" style="background-color: rgb(15, 20, 25);"><span id="side-post-label">Post</span></a>
+  </header>
+  <main>
+    <div data-testid="UserName"><span id="display-name">Post</span></div>
+    <div id="count">1,234 posts</div>
+    <div role="textbox" contenteditable="true" id="composer">Post</div>
+    <button data-testid="tweetButtonInline" id="inline-post"><span id="inline-label">Post</span></button>
+    <article>
+      <div data-testid="tweetText" lang="en" id="tweet"><span>Post</span></div>
+      <button data-testid="retweet" id="rt"><span id="rt-label">Repost</span></button>
+      <a id="link" style="color: rgb(29, 155, 240);" href="#somewhere">link</a>
+    </article>
+    <div id="later"></div>
+  </main>
+  <script>
+    window.clicks = 0;
+    for (const id of ['side-post', 'inline-post', 'rt', 'notif-link', 'link']) {
+      document.getElementById(id).addEventListener('click', (e) => { e.preventDefault(); window.clicks++; });
+    }
+    // Simulate the SPA rendering more UI later.
+    setTimeout(() => {
+      const s = document.createElement('span');
+      s.id = 'late-label';
+      s.textContent = 'Reposted';
+      document.getElementById('later').appendChild(s);
+    }, 300);
+  </script>
+</body>
+</html>

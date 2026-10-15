@@ -1,0 +1,38 @@
+/* All rules are gated on classes that content.js puts on <html>, so turning a
+   feature off removes its effect without a reload. */
+
+/* ---- Logo: hide X's glyph and paint the user-supplied logo behind it ---- */
+html.tw-logo h1[role="heading"] a[href="/home"] svg,
+html.tw-logo a[aria-label="X"] svg,
+html.tw-logo #placeholder > svg {
+  background: url("chrome-extension://__MSG_@@extension_id__/assets/logo.svg") center / contain no-repeat !important;
+}
+html.tw-logo h1[role="heading"] a[href="/home"] svg > *,
+html.tw-logo a[aria-label="X"] svg > *,
+html.tw-logo #placeholder > svg > * {
+  visibility: hidden !important;
+}
+
+/* ---- Classic blue (#1DA1F2) in light, dim and dark themes ---- */
+html.tw-colors [style*="background-color: rgb(29, 155, 240)"] { background-color: #1da1f2 !important; }
+html.tw-colors [style*="border-color: rgb(29, 155, 240)"] { border-color: #1da1f2 !important; }
+html.tw-colors [style*="; color: rgb(29, 155, 240)"],
+html.tw-colors [style^="color: rgb(29, 155, 240)"] { color: #1da1f2 !important; }
+/* X made the main Tweet buttons black/white; make them blue again. */
+html.tw-colors [data-testid="SideNav_NewTweet_Button"],
+html.tw-colors [data-testid="tweetButtonInline"],
+html.tw-colors [data-testid="tweetButton"] {
+  background-color: #1da1f2 !important;
+  border-color: #1da1f2 !important;
+}
+html.tw-colors [data-testid="SideNav_NewTweet_Button"] *,
+html.tw-colors [data-testid="tweetButtonInline"] *,
+html.tw-colors [data-testid="tweetButton"] * {
+  color: #fff !important;
+}
+
+/* ---- Classic-ish font ---- */
+html.tw-font body,
+html.tw-font body [dir] {
+  font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+}

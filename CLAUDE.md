@@ -27,4 +27,4 @@ A Manifest V3 Chrome extension that restores classic Twitter branding on x.com: 
 
 ## Status
 
-Planning only — see the checklist at the end of `docs/BRIEF.md`.
+First version built (manifest, `src/`, `popup/`, smoke test in `test/`). Live x.com selectors still need checking in Chrome.
