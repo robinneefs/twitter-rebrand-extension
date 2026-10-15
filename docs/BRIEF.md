@@ -1,4 +1,4 @@
-# Twitter Rebrand Chrome Extension — Brief
+# Twitter Classic Chrome Extension — Brief
 
 _Source: project brief by Robin Neefs, 2026-10-13._
 

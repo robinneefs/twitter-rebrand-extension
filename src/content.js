@@ -1,4 +1,4 @@
-// Twitter Rebrand content script. Cosmetic only: it toggles classes on <html>,
+// Twitter Classic content script. Cosmetic only: it toggles classes on <html>,
 // edits nodeValue of allowlisted UI-label text nodes, the document title and
 // the favicon href. It never adds, removes or moves nodes the page owns.
 (() => {
