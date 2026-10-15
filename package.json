@@ -1,5 +1,5 @@
 {
-  "name": "twitter-rebrand-extension",
+  "name": "twitter-classic",
   "private": true,
   "scripts": { "test": "node test/smoke.cjs" },
   "devDependencies": { "playwright": "^1.56.1" }
