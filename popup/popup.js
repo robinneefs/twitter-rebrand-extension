@@ -4,12 +4,12 @@ const features = document.getElementById('features');
 
 chrome.storage.local.get(DEFAULTS, (settings) => {
   for (const box of boxes) box.checked = settings[box.dataset.key];
-  features.disabled = !settings.enabled;
+  features.classList.toggle('disabled', !settings.enabled);
 });
 
 for (const box of boxes) {
   box.addEventListener('change', () => {
     chrome.storage.local.set({ [box.dataset.key]: box.checked });
-    if (box.dataset.key === 'enabled') features.disabled = !box.checked;
+    if (box.dataset.key === 'enabled') features.classList.toggle('disabled', !box.checked);
   });
 }
